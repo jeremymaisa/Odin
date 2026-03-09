@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction To CSS</title>
+    <style>
+      body {
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .alert-text {
+        color: red;
+      }
+
+      #title {
+        background-color: red;
+      }
+
+      .subsection.header {
+        color: red;
+      }
+
+      .subsection#preview {
+        color: blue;
+      }
+
+      .ancestor .contents {
+        background-color: chocolate;
+      }
+
+      .hex {
+        color: #1100ff;
+      }
+
+      .rgb {
+        color: rgba(100, 0, 127);
+      }
+
+      .hsl {
+        color: hsl(15, 82%, 56%);
+      }
+
+      img {
+        height: auto;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Hello, World</div>
+    <div>Hello again!</div>
+    <p>Hi...</p>
+    <div>Okay, bye.</div>
+
+    <div class="alert-text">Please agree to our terms of service.</div>
+    <br />
+    <div id="title">My Awesome 90's Page</div>
+
+    <div>
+      <div class="subsection header">Latest Posts</div>
+      <p class="subsection" id="preview">
+        This is where a preview for a post might go.
+      </p>
+    </div>
+
+    <!-- Descendant combinator -->
+
+    <div class="ancestor">
+      <div class="contents">
+        <div class="contents">Child</div>
+      </div>
+    </div>
+
+    <div class="contents">example out of Descendant</div>
+
+    <p class="hex">This is a hex color</p>
+    <p class="rgb">This is a rgb color</p>
+    <p class="hsl">This is a hsl color</p>
+
+    <img src="../odin-recipes/images/image.png" alt="" />
+  </body>
+</html>
