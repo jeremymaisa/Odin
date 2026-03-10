@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.className {
+  background-color: pink;
+  font-family: Verdana, 'DejaVu sans' sans-serif;
+}
+
+#uniqueId-1 {
+  color: blue;
+  font-size: 36px;
+}
+
+.number-3 {
+  font-size: 24px;
+}
+
+#uniqueId-2 {
+  background-color: lightgreen;
+  font-size: 24px;
+  font-weight: bold;
+}
