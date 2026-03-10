@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.avatar.proportioned {
+  width: 300px;
+  height: auto;
+}
+
+.avatar.disorted {
+  width: 200px;
+  height: 400px;
+}
+
