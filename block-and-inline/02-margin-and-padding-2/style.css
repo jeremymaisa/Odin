@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ebe8e8;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.container {
+  background-color: #ffffff;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.main-card {
+  background-color: lightblue;
+}
+
+.card-1 {
+  background-color: lightblue;
+}
+
+.card-2 {
+  background-color: lightblue;
+  padding: 8px;
+  text-align: center;
+}
+
+.main-card,
+.card-1,
+.card-2 {
+  margin: 8px;
+  padding: 10px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: none;
+  padding: 8px 24px;
+}
