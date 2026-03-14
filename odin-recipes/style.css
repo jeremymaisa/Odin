@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e0dfdf;
+}
+
+.title {
+  text-align: center;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-container {
+  padding: 50px;
+}
+
+.recipe {
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  border: none;
+}
+
+.recipe li {
+  list-style: none;
+}
+
+.main-recipe {
+  background-color: #a52a2a;
+  color: #ffffff;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  transition: .3s;
+}
+
+.main-recipe:hover {
+  transform: translateY(-8px);
+}
+
+.main-recipe a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  transition: .3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+
+.main-recipe img {
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.header {
+  text-align: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgb(145, 138, 138);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.header a {
+  text-decoration: none;
+  font-weight: 800;
+  color: #000000;
+  transition: 0.2s ease-in-out;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.menu {
+  font-size: 50px;
+  text-align: center;
+}
+
+.container-description,
+.container-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-list {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+  width: 800px;
+}
+
+img,
+h2 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.steps-container li {
+  list-style: none;
+}
+
+.steps {
+  background-color: #a52a2a;
+  width: 400px;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.steps:hover {
+  transform: translateY(-8px);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 1);
+}
+
+.steps img {
+  width: 350px;
+}
