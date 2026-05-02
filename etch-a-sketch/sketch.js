@@ -23,8 +23,15 @@ gridBtn.addEventListener('click', () => {
         const r = Math.floor(Math.random() * 256);
         const g = Math.floor(Math.random() * 256);
         const b = Math.floor(Math.random() * 256);
+        
+        let currentOpacity = parseFloat(square.dataset.opacity) || 0;
 
-        square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        if (currentOpacity < 1) {
+          currentOpacity += 0.1;
+          square.dataset.opacity = currentOpacity;
+        }
+
+        square.style.backgroundColor = `rgb(${r}, ${g}, ${b}, ${currentOpacity})`;
       });
     
       container.appendChild(square);
