@@ -22,4 +22,4 @@ function fibonacci(countArg) {
   return firstPrev;
 }
 
-console.log(fibonacci(10));
+console.log(fibonacci('10'));
