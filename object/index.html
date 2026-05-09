@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Object Literals
+      //const person = {
+      //name: {
+      //first: "Jeremy",
+      //  //last: "Maisa",
+      //},
+      //age: 32,
+      //bio: function () {
+      //console.log(
+      //`${this.name[0]} ${this.name[1]} is ${this.age} years old.`,
+      //);
+      //},
+      //introduceSelf: function () {
+      //console.log(`Hi! I'm ${this.name[0]}.`);
+      //},
+      //};
+
+      //const myDataName = "height";
+      //const myDataValue = "1.75m";
+
+      // person[myDataName] = myDataValue;
+
+      //console.log(person["height"]);
+
+      // Object Constructor
+
+      function Person(name) {
+        const obj = {};
+        obj.name = name;
+        obj.introduceSelf = function () {
+          console.log(`Hi! I'm ${this.name}`);
+        };
+        return obj;
+      }
+
+      const salva = new Person("Salva");
+      salva.introduceSelf();
+
+      const frankie = new Person("frankie");
+      frankie.introduceSelf();
+
+      function increaseCounterObject(objectCounter) {
+        return (objectCounter.counter += 1);
+      }
+
+      function increaseCounterPrimitive(primitiveCounter) {
+        return (primitiveCounter += 1);
+      }
+
+      const obj = { counter: 0 };
+      let primitive = 0;
+
+      /*
+              Map to names
+            */
+      //let john = { name: "John", age: 25 };
+      //let pete = { name: "Pete", age: 30 };
+      //let mary = { name: "Mary", age: 28 };
+
+      //let users = [john, pete, mary];
+
+      //et names = users.map((item) => item.name);
+      /* ... your code */
+
+      //alert(names); // John, Pete, Mary
+
+      /*
+              Map to Object
+            */
+      //let john = { name: "John", surname: "Smith", id: 1 };
+      //let pete = { name: "Pete", surname: "Hunt", id: 2 };
+      //let mary = { name: "Mary", surname: "Key", id: 3 };
+
+      //let users = [john, pete, mary];
+
+      //let usersMapped = users.map((item) => ({
+      //fullName: `${item.name} ${item.surname}`,
+      //id: item.id,
+      //}));
+
+      /* ... your code ... */
+
+      /*
+            usersMapped = [
+              { fullName: "John Smith", id: 1 },
+              { fullName: "Pete Hunt", id: 2 },
+              { fullName: "Mary Key", id: 3 }
+            ]
+            */
+
+      //alert(usersMapped.id); // 1
+      //alert(usersMapped.fullName); // John Smith
+
+      /*
+              Sort users by age
+            */
+
+      //function sortByAge(arr) {
+      //arr.sort((a, b) => a.age - b.age);
+      //}
+
+      //let john = { name: "John", age: 25 };
+      //let pete = { name: "Pete", age: 30 };
+      //let mary = { name: "Mary", age: 28 };
+
+      //let user = [pete, john, mary];
+
+      //sortByAge(user);
+
+      //alert(user[0].name);
+      // alert(user[1].name);
+      //alert(user[2].name);
+
+      /*
+              Get average age
+            */
+
+      /*
+            function getAverageAge(users) {
+              return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+            }
+
+            let john = { name: "John", age: 25 };
+            let pete = { name: "Pete", age: 30 };
+            let mary = { name: "Mary", age: 29 };
+
+            let arr = [john, pete, mary];
+
+            alert(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
+            */
+
+      //Create keyed object from array
+
+      function groupById(array) {
+        return array.reduce((obj, value) => {
+          obj[value.id] = value;
+          return obj;
+        }, {});
+      }
+
+      let users = [
+        { id: "john", name: "John Smith", age: 20 },
+        { id: "ann", name: "Ann Smith", age: 24 },
+        { id: "pete", name: "Pete Peterson", age: 31 },
+      ];
+
+      let usersById = groupById(users);
+
+      console.log(usersById);
+    </script>
+  </body>
+</html>
