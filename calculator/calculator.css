@@ -56,3 +56,7 @@ button:active {
 div.buttons:last-child {
   text-align: right;
 }
+
+button.operation {
+  background-color: orange;
+}

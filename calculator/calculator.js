@@ -1,41 +1,41 @@
-const result = document.querySelector('.result-container');
-const buttons = document.querySelectorAll('button');
+const resultContainer = document.querySelector('.result-container');
+const button = document.querySelectorAll('button');
 
 let expression = '';
 
-buttons.forEach(button => {
+button.forEach(button => {
   button.addEventListener('click', () => {
     let value = button.innerText;
 
     if (value === 'C') {
       expression = '';
-      result.innerText = '0';
+      resultContainer.innerText = '';
       return;
     }
 
     if (value === '=') {
       try {
         expression = calculateExpression(expression);
-        result.innerText = expression;
-      } catch (err) {
-        result.innerText = 'Error';
+        resultContainer.innerText = expression;
+      } catch (error) {
         expression = '';
+        resultContainer.innerText = '';
       }
       return;
     }
 
     expression += value;
-    result.innerText = expression;
+    resultContainer.innerText = expression;
   });
 });
 
 function calculateExpression(exp) {
   const tokens = exp.match(/(\d+|\+|\-|\*|\/)/g);
 
-  if (!tokens) return '0';
+  if (!tokens) return '';
 
-  let numbers = [];
   let operators = [];
+  let numbers = [];
 
   tokens.forEach(token => {
     if (['+', '-', '*', '/'].includes(token)) {
@@ -48,12 +48,13 @@ function calculateExpression(exp) {
   for (let i = 0; i < operators.length; i++) {
     if (operators[i] === '*' || operators[i] === '/') {
       let result =
-      operators[i]  === '*'
+      operators[i] === '*'
       ? numbers[i] * numbers[i + 1]
       : numbers[i] / numbers[i + 1];
 
       numbers.splice(i, 2, result);
       operators.splice(i, 1);
+
       i--;
     }
   }
@@ -61,10 +62,8 @@ function calculateExpression(exp) {
   let result = numbers[0];
 
   for (let i = 0; i < operators.length; i++) {
-
     if (operators[i] === '+') result += numbers[i + 1];
     if (operators[i] === '-') result -= numbers[i + 1];
   }
-
   return result;
 }
