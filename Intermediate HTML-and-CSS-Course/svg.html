@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .svg-circle {
+        fill: hotpink;
+        transition: r 400ms, cy 600ms;
+      }
+
+      button:hover .svg-circle,
+      button:focus-visible .svg-circle {
+        r: 50px;
+        cy: 100px;
+      }
+    
+      p {
+        text-align: center;
+      }
+
+      html {
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        background: hsl(210deg 15% 6%);
+      }
+      svg {
+        outline: 1px solid hsl(210deg 15% 30%);
+      }
+
+      .circle {
+        stroke: oklch(0.7 0.2 348);
+        stroke-width: 10px;
+        stroke-dasharray: 0, 26;
+        stroke-linecap: round;
+        fill: none;
+        animation: 400ms casinoLights linear infinite;
+      }
+
+      @keyframes casinoLights {
+        from {
+          stroke-dashoffset: 0;
+        }
+
+        to {
+          stroke-dashoffset: 26;
+        }
+      }
+
+     
+
+      .mister-polygon {
+        stroke-width: 10px;
+        stroke-dasharray: 0, 26;
+        stroke-linecap: round;
+        animation: casinoLights 300ms linear infinite;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>Checkout this SVG:</p>
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+        <circle class="svg-circle" fill="hotpink" cx="50" cy="50" r="30" />
+      </svg>
+    </button>
+
+    <svg width="280" height="280">
+      <line x1="80" y1="80" x2="200" y2="200" stroke="oklch(0.9 0.3 164)" stroke-width="5">
+    </svg>
+
+    <svg width="300" height="300" viewbox="-95 -16 150 150">
+      <rect x="0" y="0" width="200" height="200" fill="none" stroke="oklch(0.9 0.3 164)" stroke-width="5">
+    </svg>
+
+    <svg width="280" height="280">
+      <circle cx="140" cy="140" r="70" fill="none" stroke="oklch(0.9 0.3 164)" stroke-width="5">
+    </svg>
+
+    <svg width="300" height="300">
+      <ellipse cx="150" cy="150" rx="54" ry="48" fill="none" stroke="oklch(0.9 0.3 164)" stroke-width="5">
+    </svg>
+
+    <svg viewbox="0 0 200 200" width="300" height="300">
+      <circle cx="100" cy="100" r="50" class="circle"/>
+    </svg>
+
+    <svg width="300" height="300" viewbox="0 0 280 320">
+      <polygon points="
+                60,100
+                100,180
+                140,140
+                180,180
+                220,100
+                      "
+                fill="none"
+                stroke="oklch(0.9 0.3 164)"
+                />
+    </svg>
+
+    <svg class="parent-svg" width="280" height="280">
+      <polygon class="mister-polygon" stroke="goldenrod" stroke-width="5" fill="none">
+    </svg>
+
+    <svg width="300" height="220" viewbox="0 0 300 220">
+      <circle cx="150" cy="110" r="60" stroke="gold" fill="none" stroke-width="10">
+
+      </circle>
+    </svg>
+    
+    
+    <script>
+      const svg = document.querySelector('.parent-svg');
+      const polygon = document.querySelector('.mister-polygon');
+
+      const numberOfSides = 3;
+      const radius = 80;
+
+      function drawPolygon() {
+        const svgWidth = Number(svg.getAttribute('width'));
+        const svgHeight = Number(svg.getAttribute('height'));
+
+        const cx = svgWidth / 2;
+        const cy = svgHeight / 2;
+
+        const points = Array.from({length: numberOfSides}, (_, index) => {
+
+          const rotationOffSets = numberOfSides % 2 === 0
+          ? Math.PI / numberOfSides
+          : 0;
+
+          const angle = (index * 2 * Math.PI) / numberOfSides -
+            Math.PI / 2 +
+            rotationOffSets;
+
+            const x = cx + radius * Math.cos(angle);
+            const y = cy + radius * Math.sin(angle);
+            return `${x},${y}`;
+        });
+
+        polygon.setAttribute(
+          'points',
+          points.join(' ')
+        );
+      }
+
+      drawPolygon();
+
+      const element = document.querySelector('polygon');
+
+      const pathLength = element.getTotalLength();
+
+      element.style.strokeDasharray = `${pathLength}, 1000`;
+
+    </script>
+  </body>
+</html>
