@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Default style</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      *:not(dialog) {
+        margin: 0;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        html {
+          interpolate-size: allow-keywords;
+        }
+      }
+
+      * {
+        line-height: calc(1em + 0.5rem);
+      }
+
+      body {
+        -webkit-font-smoothing: antia;
+      }
+
+      img,
+      picture,
+      video,
+      canvas,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      input,
+      button,
+      textarea,
+      select {
+        font: inherit;
+      }
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+
+      #root, #__next {
+        isolation: isolate;
+      }
+
+      .parent {
+        width: 200px;
+        border: 2px solid black;
+      }
+
+      .box {
+        width: 100%;
+        border: 2px solid pink;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="box"></div>
+    </div>
+    <p>
+      This paragraph has a 1.5x ratio for line-height, and it feels pretty good,
+      right? I think this text is legible and pleasant.
+    </p>
+    <h1>But it's a bit much on headings!</h1>
+  </body>
+</html>

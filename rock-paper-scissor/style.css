@@ -63,7 +63,7 @@ h1 {
 
 #reset {
   border: 2px solid green;
-  background: white;
+  background: hsl(hue, saturation, lightness);
   padding: .75rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
