@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Selectors</title>
+    <style>
+      main {
+        background-color: blue;
+        width: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      main > div {
+        background-color: black;
+        height: 250px;
+        width: 250px;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      main > div > div {
+        background-color: red;
+        height: 150px;
+        width: 150px;
+        margin: 10px;
+      }
+
+      .group1 + div {
+        background-color: pink;
+        border-radius: 8px;
+      }
+
+      .group1 + div + div {
+        /*background-color: blueviolet;
+        border-radius: 24px;*/
+      }
+
+      .child ~ div {
+        background-color: white;
+      }
+
+      .emojify::before {
+        content: "😎 😄 🤓";
+      }
+
+      .emojify::after {
+        content: "🤓 😄 😎";
+      }
+
+      img[src^="/"] {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="parent">
+      <div class="child group1">
+        <div class="grand-child group1"></div>
+      </div>
+      <div class="child group2">
+        <div class="grand-child group2"></div>
+      </div>
+      <div class="child group3">
+        <div class="grand-child group3"></div>
+      </div>
+    </main>
+    <div>Let's <span class="emojify">emojify</span>this span!</div>
+
+    <img src="/img/lizard.png" alt="" />
+    <img src="/img/firefox.png" alt="" />
+    <img src="/img/star.png" alt="" />
+  </body>
+</html>
