@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CALC - FUNCTION</title>
+    <style>
+      :root {
+        --header: 3em;
+        --footer: 40px;
+        --main: calc(100vh - calc(var(--header) + var(--footer)));
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        border: 0px solid transparent;
+        background-color: #7a7a7a;
+      }
+
+      #container {
+        border: 0px solid transparent;
+        height: 100vh;
+        color: white;
+      }
+
+      #container > * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #header {
+        height: var(--header);
+        background-color: #111111;
+      }
+
+      #mainContent {
+        height: var(--main);
+        background-color: #343434;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #footer {
+        height: var(--footer);
+        background-color: #232323;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header id="header">< header /></header>
+      <main id="mainContent">< main content /></main>
+      <footer id="footer">< footer /></footer>
+    </div>
+  </body>
+</html>
