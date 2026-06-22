@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale-1.0" />
+    <title>FORMS</title>
+    <style>
+      #email {
+        border: 2px solid #000;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      #email:user-invalid {
+        border-color: red;
+      }
+
+      #email:user-valid {
+        border-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is a form</h1>
+    <form action="">
+      <label for="name">User name:</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        placeholder="username"
+        required
+      />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        placeholder="email"
+        name="email"
+        id="email"
+        required
+      /><br /><br />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        id="password"
+        required
+      />
+      <label for="number">Number:</label>
+      <input
+        type="number"
+        placeholder="number"
+        name="number"
+        id="number"
+        min="1"
+        max="20"
+      /><br /><br />
+      <label for="date">Date:</label>
+      <input type="date" placeholder="date" name="date" id="date" /><br /><br />
+      <label for="reviews">Review:</label><br />
+      <textarea
+        name="reviews"
+        id="reviews"
+        placeholder="type comment..."
+        rows="20"
+        cols="30"
+        minlength="3"
+        maxlength="20"
+      ></textarea>
+      <br /><br />
+      <select name="car" id="car" title="car">
+        <option value="mercedes">Mercedes</option>
+        <option value="tesla">Tesla</option>
+        <option value="volvo">Volvo</option>
+        <option value="bmw">BMW</option>
+        <option value="mini">Mini</option>
+        <option value="ford">Ford</option>
+      </select>
+      <select name="fashion" title="fashion">
+        <optgroup label="Clothing">
+          <option value="t_shirt">T-Shirts</option>
+          <option value="sweater">Sweaters</option>
+          <option value="coats">Coats</option>
+        </optgroup>
+        <optgroup label="Foot Wear">
+          <option value="sneakers">Sneakers</option>
+          <option value="boots">Boots</option>
+          <option value="sandals">Sandals</option>
+        </optgroup></select
+      ><br />
+      <br />
+      <div>
+        <p>Ticket Type</p>
+        <input
+          type="radio"
+          name="ticket_type"
+          id="child"
+          placeholder="select"
+          value="child"
+        />
+        <label for="child">Child</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          name="ticket_type"
+          id="adult"
+          placeholder="select"
+          value="adult"
+          checked
+        />
+        <label for="adult">Adult</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          name="ticket_type"
+          id="senior"
+          placeholder="select"
+          value="senior"
+        />
+        <label for="senior">Senior</label>
+      </div>
+      <p>Pizza Toppings</p>
+      <div>
+        <input
+          type="checkbox"
+          name="topping"
+          id="sausage"
+          value="sausage"
+          title="sausage"
+        />
+        <label for="sausage">Sausage</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="topping"
+          id="onion"
+          value="onion"
+          title="onion"
+        />
+        <label for="onion">Onion</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="topping"
+          id="pepperoni"
+          value="pepperoni"
+          title="pepperoni"
+        />
+        <label for="pepperoni">Pepperoni</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          name="topping"
+          id="mushroom"
+          value="mushroom"
+          title="mushroom"
+        />
+        <label for="mushroom">Mushroom</label>
+      </div>
+      <br /><br />
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="button">Button</button>
+    </form>
+    <script>
+      
+    </script>
+  </body>
+</html>

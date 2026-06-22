@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .form_control {
+        font-family: system-ui, "sans-serif";
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.1;
+        display: grid;
+        grid-template-columns: 1em auto;
+        gap: 0.5em;
+      }
+
+      input[type="checkbox"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        display: grid;
+      }
+
+      .form_control + .form_control {
+        margin-top: 1em;
+      }
+
+      input[type="checkbox"]::before {
+        content: "";
+        width: 0.83em;
+        height: 0.83em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em violet;
+      }
+
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <label class="form_controll">
+        <input type="checkbox" name="checkbox" id="check" title="check" />
+        Checkbox
+      </label>
+      <label class="form_controll">
+        <input
+          type="checkbox"
+          name="checkbox-checked"
+          id="checkbox-checked"
+          title="check"
+        />
+        Checkbox - checked
+      </label>
+    </form>
+  </body>
+</html>
