@@ -110,6 +110,10 @@
         color: #596d48;
         font-weight: bold;
       }
+
+      p {
+        font-size: 15px;
+      }
     </style>
   </head>
   <body>
@@ -171,20 +175,44 @@
 
         const passwordInput = document.getElementById("password");
         const confirmPasswordInput = document.getElementById("cpassword");
-        const message = document.getElementById("message");
+        const messageInput = document.getElementById("message");
+        const firstNameInput = document.getElementById("fname");
+        const lastNameInput = document.getElementById("lname");
+        const emailInput = document.getElementById("email");
+        const phoneNumInput = document.getElementById("phone");
 
         const password = passwordInput.value;
         const confirmPassword = confirmPasswordInput.value;
+        const firstname = firstNameInput.value;
+        const lastname = lastNameInput.value;
+        const email = emailInput.value;
+        const phone = phoneNumInput.value;
 
         passwordInput.style.border = "";
         confirmPasswordInput.style.border = "";
+        passwordInput.style.border = "";
+        firstNameInput.style.border = "";
+        lastNameInput.style.border = "";
+        emailInput.style.border = "";
+        phoneNumInput.style.border = "";
 
-        if (password === "" && confirmPassword === "") {
-          message.textContent = "Please enter your password.";
+        if (
+          password === "" &&
+          confirmPassword === "" &&
+          firstname === "" &&
+          lastname === "" &&
+          email === "" &&
+          phone === ""
+        ) {
+          message.textContent = "Please complete all required fields.";
           message.style.color = "red";
 
           passwordInput.style.border = "1px solid red";
           confirmPasswordInput.style.border = "1px solid red";
+          firstNameInput.style.border = "1px solid red";
+          lastNameInput.style.border = "1px solid red";
+          emailInput.style.border = "1px solid red";
+          phoneNumInput.style.border = "1px solid red";
         } else if (password !== confirmPassword) {
           message.textContent = "Password do not match!";
           message.style.color = "red";
@@ -198,7 +226,7 @@
           passwordInput.style.border = "1px solid red";
           confirmPasswordInput.style.border = "1px solid red";
         } else {
-          message.textContent = "Password matched!";
+          message.textContent = "Account created successfully!";
           message.style.color = "green";
 
           passwordInput.style.border = "1px solid green";
