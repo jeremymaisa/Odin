@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .grid-container {
+        resize: both;
+        overflow: auto;
+        display: grid;
+        gap: 4px;
+        padding: 4px;
+        border: 1px solid grey;
+        width: 1000px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .grid-item {
+        background-color: #444;
+        text-align: center;
+        color: #ddd;
+        font-family: sans-serif;
+        font-size: 1.5rem;
+        padding: 12px;
+      }
+
+      p {
+        margin: 12px auto 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item"><p>Odin 1</p></div>
+      <div class="grid-item"><p>Odin 2</p></div>
+      <div class="grid-item"><p>Odin 3</p></div>
+      <div class="grid-item"><p>Odin 4</p></div>
+      <div class="grid-item"><p>Odin 5</p></div>
+      <div class="grid-item"><p>Odin 6</p></div>
+      <div class="grid-item"><p>Odin 7</p></div>
+      <div class="grid-item"><p>Odin 8</p></div>
+      <div class="grid-item"><p>Odin 9</p></div>
+      <div class="grid-item"><p>Odin 10</p></div>
+    </div>
+  </body>
+</html>

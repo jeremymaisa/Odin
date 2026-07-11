@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holy Grail Mockup</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        gap: 4px;
+      }
+
+      .container div {
+        padding: 15px;
+        font-size: 32px;
+        font-family: Helvetica;
+        font-weight: bold;
+        color: white;
+      }
+
+      .header {
+        background-color: #393f4d;
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .logo {
+        justify-self: start;
+      }
+
+      .menu {
+        justify-self: center;
+      }
+
+      .menu ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+      }
+
+      .menu ul li a,
+      .nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .nav ul,
+      .menu ul {
+        font-size: 16px;
+        list-style-type: none;
+      }
+
+      .sidebar {
+        background-color: #c50208;
+        grid-row: 2 / 4;
+        display: grid;
+        gap: 50px;
+      }
+
+      .sidebar .photo {
+        background-color: white;
+        color: black;
+        font-size: 12px;
+        font-weight: normal;
+        border-radius: 10px;
+      }
+
+      .sidebar .side-content {
+        background-color: white;
+        color: black;
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+      .nav {
+        background-color: #c50208;
+      }
+
+      .nav ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .nav ul li {
+        text-transform: uppercase;
+      }
+
+      .article {
+        background-color: #bccbde;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .article p {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: white;
+        text-align: left;
+      }
+
+      .article .card {
+        background-color: #ffffff;
+        color: black;
+        text-align: center;
+        height: 200px;
+      }
+
+      .card p {
+        color: black;
+        font-weight: normal;
+        font-size: 14px;
+      }
+
+      .card .title {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .footer {
+        background-color: #393f4d;
+        grid-column: 1 / 3;
+      }
+
+      .footer p {
+        font-size: 13px;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">Header Logo</div>
+        <div class="menu">
+          <ul>
+            <li><a href="">header link one</a></li>
+            <li><a href="">header link two</a></li>
+            <li><a href="">header link three</a></li>
+            <li><a href="">header link four</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="photo">
+          <p>placeholder for image</p>
+        </div>
+        <div class="side-content">Box 1</div>
+        <div class="side-content">Box 2</div>
+        <div class="side-content">Box 3</div>
+      </div>
+
+      <div class="nav">
+        <ul>
+          <li><a href="">Latest Articles</a></li>
+          <li><a href="">Most Views</a></li>
+          <li><a href="">Featured</a></li>
+        </ul>
+      </div>
+
+      <div class="article">
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+        <div class="card">
+          <p class="title">Article Title</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud...
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>Copyright © The Odin Project 2021</p>
+      </div>
+    </div>
+  </body>
+</html>

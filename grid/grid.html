@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID</title>
+    <style>
+      .container {
+        display: inline-grid;
+        grid-template-rows: repeat(5, 40px);
+        grid-template-columns: repeat(5, 40px);
+        background-color: lightblue;
+        grid-template-areas:
+          "living-room living-room living-room living-room living-room"
+          "living-room living-room living-room living-room living-room"
+          "bed-room bed-room bathroom kitchen kitchen"
+          "bed-room bed-room bathroom kitchen kitchen"
+          "closet closet bathroom kitchen kitchen";
+      }
+
+      .room {
+        border: 1px solid #000;
+        font-size: 50%;
+        text-align: center;
+      }
+
+      #living-room {
+        grid-area: living-room;
+      }
+
+      #bedroom {
+        grid-area: bed-room;
+      }
+
+      #bathroom {
+        grid-area: bathroom;
+      }
+
+      #closet {
+        grid-area: closet;
+      }
+
+      #kitchen {
+        grid-area: kitchen;
+      }
+
+      /*.container #living-room {
+        grid-column-start: 1;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+
+      #kitchen {
+        grid-column: 4 / 6;
+        grid-row: 3 / 6;
+      }
+
+      #bedroom {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 5;
+      }
+
+      #bathroom {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 6;
+      }
+
+      #closet {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;
+      }*/
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="room" id="living-room">Living Room</div>
+      <div class="room" id="kitchen">Kitchen</div>
+      <div class="room" id="bedroom">Bedroom</div>
+      <div class="room" id="bathroom">Bathroom</div>
+      <div class="room" id="closet">Closet</div>
+    </div>
+  </body>
+</html>

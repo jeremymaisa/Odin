@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADMIN DASHBOARD</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto Mono" sans-serif;
+        background-color: #e5e1e1;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+      }
+
+      .sidebar {
+        background-color: #1297cc;
+        display: grid;
+        grid-row: 1 / 3;
+        gap: 4px;
+        padding: 0 20px;
+        align-items: start;
+      }
+      .sidebar p {
+        font-weight: bolder;
+        font-size: 1.5em;
+        color: #fff;
+      }
+
+      .sidebar .sidebar-header > div {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 10px;
+      }
+
+      .sidebar .sidebar-header i {
+        color: #fff;
+        font-size: 1.5em;
+      }
+
+      .sidebar .top-bar ul,
+      .sidebar .bottom-bar ul {
+        display: grid;
+        gap: 25px;
+      }
+
+      .sidebar .top-bar ul li a,
+      .sidebar .bottom-bar ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bolder;
+      }
+
+      .sidebar .top-bar ul li i,
+      .sidebar .bottom-bar ul li i {
+        color: #fff;
+        font-size: 1em;
+        font-weight: bolder;
+        margin-right: 10px;
+      }
+
+      ul li {
+        list-style: none;
+      }
+
+      .header {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        padding: 15px;
+        align-items: center;
+        background-color: #fff;
+        gap: 10px;
+        box-shadow: 0 4px 6px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .header .search {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .header .search input {
+        flex: 1;
+        border-radius: 12px;
+        border: none;
+        outline: none;
+        padding: 4px;
+        background-color: #d7d6d6;
+      }
+
+      .header .profile {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .header .profile .bell {
+        font-size: 1.5em;
+      }
+
+      .header .profile .profile-img,
+      .header .greetings .profile-img {
+        background-color: #1297cc;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header .profile .profile-img i,
+      .header .greetings .profile-img i {
+        font-size: 2em;
+      }
+
+      .header .greetings {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .header .greetings .right-greetings h1,
+      .header .profile p {
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+
+      .header .greetings .right-greetings p {
+        font-weight: bold;
+      }
+
+      .header .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .header .buttons button {
+        padding: 8px 20px;
+        border-radius: 18px;
+        border: none;
+        background-color: #1cb4f0;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .header .buttons button:hover {
+        background-color: #50cafa;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        padding: 20px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .content .project {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(280px, 1fr));
+        gap: 24px;
+      }
+
+      .content .project h2 {
+        grid-column: 1 / -1;
+      }
+
+      .content .card {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 220px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-left: 8px solid #f0b429;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      .content .card .icons {
+        justify-self: end;
+        display: flex;
+        gap: 15px;
+      }
+
+      .right-sidebar {
+        display: grid;
+        gap: 24px;
+        align-content: start;
+      }
+
+      .announcement,
+      .trending {
+        display: grid;
+        gap: 20px;
+      }
+
+      .announcement .announcement-card {
+        display: grid;
+        background-color: #ffffff;
+        color: black;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        min-height: 220px;
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .announcement .announcement-card p,
+      .content .project .card p {
+        font-size: 0.8em;
+        color: #636363;
+      }
+
+      .announcement .announcement-card h3,
+      .content .project .card h3 {
+        font-size: 1em;
+        margin-bottom: 4px;
+      }
+
+      .announcement .announcement-card > * {
+        border-bottom: 1px solid #b8b7b7;
+        padding: 10px;
+      }
+
+      .trending .trending-main-card {
+        display: grid;
+        align-items: center;
+        background-color: #ffffff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .trending .trending-main-card .trending-card {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .trending .trending-main-card .trending-card .right-trending h4 {
+        font-size: 0.8em;
+        font-weight: 500;
+      }
+
+      .trending .trending-main-card .trending-card .right-trending p {
+        font-size: 0.7em;
+        color: #636363;
+      }
+
+      .trending .trending-main-card .trending-card .left-trending .profile-img {
+        background-color: #1297cc;
+        color: #fff;
+        width: 42px;
+        height: 42px;
+        border-radius: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-header">
+          <div>
+            <i class="fa fa-dashcube"></i>
+            <p>Dashboard</p>
+          </div>
+        </div>
+        <div class="top-bar">
+          <ul>
+            <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+            <li>
+              <i class="fa far fa-address-card"></i><a href="#">Profile</a>
+            </li>
+            <li><i class="fa fa-message"></i><a href="#">Messages</a></li>
+            <li><i class="fa fa-history"></i><a href="#">History</a></li>
+            <li><i class="fa fa-list-check"></i><a href="#">Task</a></li>
+            <li><i class="fa fa-users"></i><a href="#">Commnunities</a></li>
+          </ul>
+        </div>
+        <div class="bottom-bar">
+          <ul>
+            <li><i class="fa fa-gear"></i><a href="#">Settings</a></li>
+            <li>
+              <i class="fa fa-circle-question"></i><a href="#">Support</a>
+            </li>
+            <li><i class="fa fa-shield"></i><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header">
+        <div class="search">
+          <span class="fa fa-search"></span>
+          <input type="search" title="search" placeholder="search..." />
+        </div>
+        <div class="profile">
+          <span class="fa-regular fa-bell bell"></span>
+          <span class="profile-img"><i class="fa-regular fa-user"></i></span>
+          <p>Morgan Oakley</p>
+        </div>
+        <div class="greetings">
+          <div class="left-greetings">
+            <span class="profile-img"><i class="fa-regular fa-user"></i></span>
+          </div>
+          <div class="right-greetings">
+            <p>Hi there,</p>
+            <h1>Morgan Oakley (@morgan)</h1>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="new" title="new">New</button>
+          <button class="upload" title="upload">Upload</button>
+          <button class="share" title="share">Share</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="project">
+          <h2>Your Projects</h2>
+          <div class="card">
+            <h3 class="title">Super Cool Project</h3>
+            <p class="description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos nostrum vel eveniet facilis dolore. Odio, rerum ullam?
+              Obcaecati est, molestiae, facere ad omnis consectetur quos
+              expedita iste optio qui delectus!
+            </p>
+            <div class="icons">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-eye"></i>
+              <i class="fa-solid fa-bezier-curve"></i>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="title">Less Cool Project</h3>
+            <p class="description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos nostrum vel eveniet facilis dolore. Odio, rerum ullam?
+              Obcaecati est, molestiae, facere ad omnis consectetur quos
+              expedita iste optio qui delectus!
+            </p>
+            <div class="icons">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-eye"></i>
+              <i class="fa-solid fa-bezier-curve"></i>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="title">Impossible App</h3>
+            <p class="description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos nostrum vel eveniet facilis dolore. Odio, rerum ullam?
+              Obcaecati est, molestiae, facere ad omnis consectetur quos
+              expedita iste optio qui delectus!
+            </p>
+            <div class="icons">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-eye"></i>
+              <i class="fa-solid fa-bezier-curve"></i>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="title">Easy Peasy App</h3>
+            <p class="description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos nostrum vel eveniet facilis dolore. Odio, rerum ullam?
+              Obcaecati est, molestiae, facere ad omnis consectetur quos
+              expedita iste optio qui delectus!
+            </p>
+            <div class="icons">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-eye"></i>
+              <i class="fa-solid fa-bezier-curve"></i>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="title">Add Blocker</h3>
+            <p class="description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos nostrum vel eveniet facilis dolore. Odio, rerum ullam?
+              Obcaecati est, molestiae, facere ad omnis consectetur quos
+              expedita iste optio qui delectus!
+            </p>
+            <div class="icons">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-eye"></i>
+              <i class="fa-solid fa-bezier-curve"></i>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="title">Money Maker</h3>
+            <p class="description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Dignissimos nostrum vel eveniet facilis dolore. Odio, rerum ullam?
+              Obcaecati est, molestiae, facere ad omnis consectetur quos
+              expedita iste optio qui delectus!
+            </p>
+            <div class="icons">
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-eye"></i>
+              <i class="fa-solid fa-bezier-curve"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-sidebar">
+          <div class="announcement">
+            <h2>Announcement</h2>
+            <div class="announcement-card">
+              <div>
+                <h3>Site Maintenance</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                  debitis a autem, aperiam itaque ea iste
+                </p>
+              </div>
+              <div>
+                <h3>Site Maintenance</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                  debitis a autem, aperiam itaque ea iste
+                </p>
+              </div>
+              <div>
+                <h3>Site Maintenance</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+                  debitis a autem, aperiam itaque ea iste
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="trending">
+            <h3>Trending</h3>
+            <div class="trending-main-card">
+              <div class="trending-card">
+                <div class="left-trending">
+                  <span class="profile-img"
+                    ><i class="fa-regular fa-user"></i
+                  ></span>
+                </div>
+                <div class="right-trending">
+                  <h4>@tegan</h4>
+                  <p>World Peach Builder</p>
+                </div>
+              </div>
+              <div class="trending-card">
+                <div class="left-trending">
+                  <span class="profile-img"
+                    ><i class="fa-regular fa-user"></i
+                  ></span>
+                </div>
+                <div class="right-trending">
+                  <h4>@morgan</h4>
+                  <p>Super Cool Project</p>
+                </div>
+              </div>
+              <div class="trending-card">
+                <div class="left-trending">
+                  <span class="profile-img"
+                    ><i class="fa-regular fa-user"></i
+                  ></span>
+                </div>
+                <div class="right-trending">
+                  <h4>@Kendal</h4>
+                  <p>Life Changing App</p>
+                </div>
+              </div>
+              <div class="trending-card">
+                <div class="left-trending">
+                  <span class="profile-img"
+                    ><i class="fa-regular fa-user"></i
+                  ></span>
+                </div>
+                <div class="right-trending">
+                  <h4>@Alex</h4>
+                  <p>No Traffic Maker</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/9d60df7450.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
