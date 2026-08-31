@@ -41,9 +41,7 @@ body {
 }
 
 .header .add-btn:hover,
-.container .book-card .btn button:hover,
-.form-container .form .submit-btn:hover,
-.form-container .form .reset-btn:hover {
+.container .book-card .btn button:hover {
   background-color: var(--hover-effect);
 }
 
@@ -79,14 +77,14 @@ body {
 }
 
 .form-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   display: none;
 }
 
 .form-container.active {
   display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form-container .form {
