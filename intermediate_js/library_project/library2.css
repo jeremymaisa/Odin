@@ -17,7 +17,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #eeeded;
+  background-color: #e0dfdf;
 }
 
 .header {
@@ -27,7 +27,8 @@ body {
   box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
 }
 
-.header .add-btn {
+.header .add-btn,
+.container .book-card .btn button {
   padding: 10px 20px;
   border-radius: 4.5px;
   border: none;
@@ -36,8 +37,41 @@ body {
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
-.header .add-btn:hover {
+.header .add-btn:hover,
+.container .book-card .btn button:hover {
   background-color: var(--hover-effect);
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2em;
+  padding: 3.5em;
+}
+
+.container .book-card {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  width: 20%;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+
+.container .book-card:hover {
+  box-shadow: 7px 7px 7px 7px var(--hover-effect);
+  transform: translateY(-3px);
+}
+
+.container .book-card p {
+  margin-bottom: 1.5em;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.container .book-card .btn {
+  text-align: center;
 }
