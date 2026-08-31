@@ -41,7 +41,9 @@ body {
 }
 
 .header .add-btn:hover,
-.container .book-card .btn button:hover {
+.container .book-card .btn button:hover,
+.form-container .form .submit-btn:hover,
+.form-container .form .reset-btn:hover {
   background-color: var(--hover-effect);
 }
 
@@ -74,4 +76,58 @@ body {
 
 .container .book-card .btn {
   text-align: center;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.form-container.active {
+  display: block;
+}
+
+.form-container .form {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-radius: 4px;
+}
+
+.form-container .form .input-container div {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+
+.form-container .form .input-container {
+  margin-bottom: 15px;
+}
+
+.form-container .form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 2px;
+  font-size: 1.5em;
+}
+
+.form-container .form button {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: var(--hover-effect);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  letter-spacing: 1.5px;
 }
