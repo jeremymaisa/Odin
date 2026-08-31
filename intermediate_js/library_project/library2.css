@@ -11,9 +11,33 @@
 :root {
   --primary-color: #438299;
   --secondaty-color: #57808f;
+  --dark-color: #0d262f;
+  --hover-effect: #174352;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   background-color: #eeeded;
+}
+
+.header {
+  background-color: var(--primary-color);
+  padding: 20px;
+  text-align: end;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
+}
+
+.header .add-btn {
+  padding: 10px 20px;
+  border-radius: 4.5px;
+  border: none;
+  outline: none;
+  background-color: var(--dark-color);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.header .add-btn:hover {
+  background-color: var(--hover-effect);
 }
