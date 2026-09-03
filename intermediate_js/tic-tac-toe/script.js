@@ -1,6 +1,9 @@
 const cells = document.querySelectorAll('.cell');
 const result = document.querySelector('.result');
 const restartBtn = document.querySelector('.restart');
+const start = document.querySelector('.start')
+const cellContainer = document.querySelector('.cellContainer')
+const inputName = document.getElementById('name');
 const winCondition = [
   [0, 1, 2],
   [3, 4, 5],
@@ -9,20 +12,44 @@ const winCondition = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [3, 4, 6]
+  [2, 4, 6]
 ];
 
 let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = 'X';
 let running = false;
+let playerName = '';
+let hasStarted = false;
+let hasPlayed = false;
+
+cellContainer.classList.remove('active')
 
 playGame();
 
 function playGame() {
   cells.forEach(cell => cell.addEventListener('click', startGame));
 
+  start.addEventListener('click', () => {
+    const name = inputName.value.trim();
+
+    if (name === "") {
+      alert("Please input a name first");
+      return;
+    }
+
+    playerName = name;
+    hasStarted = true
+    cellContainer.classList.add('active');
+
+    beginGame();
+  })
+
   restartBtn.addEventListener('click', resetGame);
-  result.textContent = `click to play`;
+  running = true;
+}
+
+function beginGame() {
+  result.textContent = `"${playerName}" click to play`
   running = true;
 }
 
@@ -30,6 +57,8 @@ function startGame() {
   const cellIndex = this.getAttribute("cellAttribute");
 
   if (options[cellIndex] !== "" || !running) return;
+
+  hasPlayed = true;
   updateCell(this, cellIndex);
   playerWin()
 
@@ -77,9 +106,21 @@ function playerWin() {
 }
 
 function resetGame() {
- currentPlayer = 'X';
- options = ["", "", "", "", "", "", "", "", ""];
- result.textContent = `click to play`;
- cells.forEach(cell => cell.textContent = "")
- running = true
+
+  if (!hasStarted || !hasPlayed) {
+    alert("Play at least one move before restarting");
+    return;
+  }
+
+  currentPlayer = 'X';
+  options = ["", "", "", "", "", "", "", "", ""];
+  cells.forEach(cell => cell.textContent = "")
+  running = false;
+  hasPlayed = false;
+  hasStarted = false;
+  playerName = '';
+  cellContainer.classList.remove('active');
+  inputName.value = '';
+  result.textContent = ''
 }
+
